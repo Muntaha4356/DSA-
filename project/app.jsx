@@ -1,6 +1,6 @@
 import "./styles.css";
-import { convertToPostfix } from "./utils/Postfix.js";
-import { evaluatePostfix } from "./utils/Evaluation.js";
+import  {convertToPostfix}  from "./utils/Postfix.js";
+import  {evaluatePostfix}  from "./utils/Evaluation.js";
 import { useState } from "react";
 export default function App() {
   const [infixExpression, setInfixExpression] = useState("");
@@ -15,9 +15,9 @@ export default function App() {
   };
   return (
     <div className="App">
-      <h1>Postfix to infix converter</h1>
+      <h1>Postfix to infix converter 🎀</h1>
       <hr />
-      <label htmlFor="text">Infix Expression</label>
+      <label htmlFor="text">Infix Expression: </label>
       <input
         type="text"
         placeholder="Enter Infix Expression"
@@ -25,18 +25,29 @@ export default function App() {
         onChange={(e) => setInfixExpression(e.target.value)}
       />
       <br />
-      <label htmlFor="text">Postfix Expression</label>
-      <textarea
-        name="Postfix"
-        id="postfix"
-        readOnly
-        value={postfixExpression}
-      ></textarea>
+      <div className="row">
+        <label htmlFor="text">Postfix Expression: </label>
+        <textarea
+          name="Postfix"
+          id="postfix"
+          readOnly
+          value={postfixExpression}
+        ></textarea>
+      </div>
+
       <br />
-      <label htmlFor="text">Evaluated Answer</label>
-      <textarea name="" id="" readOnly value={evaluatedResult}></textarea>
+      <div className="row">
+        <label htmlFor="evaluated">Evaluated Answer: </label>
+        <textarea
+          name="evaluated"
+          id="evaluated"
+          readOnly
+          value={evaluatedResult}
+        ></textarea>
+      </div>
       <br />
-      <button onClick={handleConversion}>Convert</button>
+      <button onClick={handleConversion}>Convert 😉</button>
+      <footer>Coded by Muntaha 🧐</footer>
     </div>
   );
 }
